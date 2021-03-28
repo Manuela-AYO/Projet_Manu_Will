@@ -1,28 +1,20 @@
-#ifndef TYPE_H
-#define TYPE_H
+#ifndef _TYPE_H
+#define _TYPE_H
 
 /*Structure de point*/
 typedef struct{
 	float x;
 	float y;
-	int classe;
+	unsigned int classe;
 }point;
 
 /*Un point dans la liste sera un élément constitué de sa valeur et d'un pointeur
 vers le prochain point*/
-typedef struct
-{
+typedef struct element{
 	point courant;
-	point *suivant;	
+	struct element *suivant;	
 }element;
 
-/*Structure de liste de points constituée du nombre de points et 
-du 1er point sauvegardé dans la liste*/
-struct liste_point{
-	int nb_element;
-	element *premier;
-};
-
-typedef struct liste_point liste;
+typedef element *liste;
 
 #endif
